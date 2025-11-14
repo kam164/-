@@ -22,4 +22,10 @@ while True:
             print(data)
         except:
             pass
-    time.sleep(3)
+    for sock in players:
+        try:
+            sock.send("LOL".encode())
+        except:
+            players.remove(sock)
+            sock.close()
+
