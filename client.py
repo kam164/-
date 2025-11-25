@@ -1,4 +1,6 @@
 import socket
+from idlelib.configdialog import font_sample_text
+
 import pygame
 import math
 pygame.init()
@@ -10,6 +12,7 @@ radius=50
 old=(0,0)
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Бактерии")
+
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 sock.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
@@ -35,5 +38,8 @@ while run:
     print(data)
     screen.fill('gray')
     pygame.draw.circle(screen,(255,0,0),CC,radius)
+    font = pygame.font.Font(None, 200)
+    text = font.render("cat", True, (255, 255, 255))
+    screen.blit(text, (100,100))
     pygame.display.update()
 pygame.quit()
