@@ -6,6 +6,7 @@ import tkinter.messagebox
 
 import pygame
 import math
+import time
 pygame.init()
 
 class Grid:
@@ -142,4 +143,8 @@ while run:
     #text = font.render("cat", True, (255, 255, 255))
     #screen.blit(text, (100,100))
     pygame.display.update()
+screen.fill("gray25")
+draw_text(CC[0], CC[1], 85, "Спасибо за игру!", "white")
+pygame.display.update()
+time.sleep(3)
 pygame.quit()
